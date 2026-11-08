@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <main className="site-shell">
       <header className="site-header">
-        <a href="#top" className="wordmark">Venport</a>
+        <a href="#top" className="brand-lockup"><img className="brand-logo" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/venportai_LOGO%281%29-ITKmMO8b0ovmQOt6pCF3tzTv8XRcW8.png" alt="" /><span className="wordmark">Venport</span></a>
         <nav aria-label="Main navigation" className="main-nav">
           <a href="#products">Platform</a><a href="#capabilities">Capabilities</a><a href="#intelligence">Intelligence</a><a href="#company">Company</a><a href="#updates">Journal</a>
         </nav>
@@ -44,7 +44,7 @@ export default function Page() {
 
       <section id="careers" className="cta section-rule"><h2>Let&apos;s make international trade more intelligent.</h2><p className="cta-support">Building the next layer of intelligence for customs, compliance and global trade operations.</p><a href="#contact" className="cta-link">Talk to Venport <span>↗</span></a></section>
 
-      <footer id="contact" className="site-footer"><div className="footer-top"><div><span className="wordmark">Venport</span><p className="footer-description">Intelligence for international trade.</p></div><div className="footer-links"><div><span>PLATFORM</span><a href="#products">Overview</a><a href="#products">Document Intelligence</a><a href="#products">HSN Intelligence</a><a href="#products">Compliance Workflows</a></div><div><span>COMPANY</span><a href="#company">About Venport</a><a href="#safety">Our Approach</a><a href="#updates">Journal</a><a href="#contact">Contact</a></div><div><span>CONNECT</span><a href="#contact">LinkedIn</a><a href="#contact">Email</a><a href="#contact">Request a Pilot</a></div></div></div><div className="footer-bottom"><span>© 2026 Venport. All rights reserved.</span><span>Privacy Policy · Terms of Use</span><a href="#top">Back to top ↑</a></div><div className="stripes" aria-hidden="true">{Array.from({ length: 18 }).map((_, index) => <i key={index} />)}</div></footer>
+      <footer id="contact" className="site-footer"><div className="footer-top"><div><a href="#top" className="brand-lockup"><img className="brand-logo" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/venportai_LOGO%281%29-ITKmMO8b0ovmQOt6pCF3tzTv8XRcW8.png" alt="" /><span className="wordmark">Venport</span></a><p className="footer-description">Intelligence for international trade.</p></div><div className="footer-links"><div><span>PLATFORM</span><a href="#products">Overview</a><a href="#products">Document Intelligence</a><a href="#products">HSN Intelligence</a><a href="#products">Compliance Workflows</a></div><div><span>COMPANY</span><a href="#company">About Venport</a><a href="#safety">Our Approach</a><a href="#updates">Journal</a><a href="#contact">Contact</a></div><div><span>CONNECT</span><a href="#contact">LinkedIn</a><a href="#contact">Email</a><a href="#contact">Request a Pilot</a></div></div></div><div className="footer-bottom"><span>© 2026 Venport. All rights reserved.</span><span>Privacy Policy · Terms of Use</span><a href="#top">Back to top ↑</a></div><div className="stripes" aria-hidden="true">{Array.from({ length: 18 }).map((_, index) => <i key={index} />)}</div></footer>
     </main>
   )
 }
