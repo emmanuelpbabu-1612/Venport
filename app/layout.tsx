@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'OpenAI Research',
-  description: 'A visual reference page for OpenAI research and technology.',
+  title: 'Venport — Intelligence for international trade',
+  description: 'Venport is building intelligent infrastructure for customs compliance, trade documentation and global trade operations.',
   generator: 'v0.app',
   icons: {
     icon: [
