@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import GradualBlur from '@/components/GradualBlur'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -34,6 +35,22 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        <GradualBlur
+          position="bottom"
+          target="page"
+          height="6rem"
+          strength={1.5}
+          layers={8}
+          curve="ease-out"
+          exponential
+          opacity={0.85}
+          saturation={1}
+          tint="rgba(8, 8, 8, 0.35)"
+          autoHide
+          duration={0.35}
+          easing="ease-out"
+          zIndex={30}
+        />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

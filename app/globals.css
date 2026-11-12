@@ -463,3 +463,9 @@ img:not(.brand-logo):not(.card-nav__logo img):not([data-image-hover="off"]) {
     grid-column: 1 / -1;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .gradual-blur {
+    display: none;
+  }
+}
