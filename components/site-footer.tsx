@@ -51,7 +51,11 @@ export function SiteFooter() {
 
       <div className="site-footer__wordmark">
         <span className="sr-only">Venport</span>
-        <span className="site-footer__wordmark-display" aria-hidden="true">Venport</span>
+        <span className="site-footer__wordmark-display" aria-hidden="true">
+          <span className="site-footer__wordmark-layer site-footer__wordmark-layer--sharp">Venport</span>
+          <span className="site-footer__wordmark-layer site-footer__wordmark-layer--soft">Venport</span>
+          <span className="site-footer__wordmark-layer site-footer__wordmark-layer--deep">Venport</span>
+        </span>
       </div>
     </AnimatedContent>
   )

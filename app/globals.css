@@ -424,6 +424,7 @@ img:not(.brand-logo):not(.card-nav__logo img):not([data-image-hover="off"]) {
 }
 
 .site-footer__wordmark-display {
+  position: relative;
   display: block;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
@@ -435,6 +436,41 @@ img:not(.brand-logo):not(.card-nav__logo img):not([data-image-hover="off"]) {
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
+}
+
+.site-footer__wordmark-layer {
+  display: block;
+  width: 100%;
+  color: #fff;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.site-footer__wordmark-layer--sharp {
+  position: relative;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 22%, transparent 49%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 22%, transparent 49%);
+}
+
+.site-footer__wordmark-layer--soft,
+.site-footer__wordmark-layer--deep {
+  position: absolute;
+  inset: 0;
+}
+
+.site-footer__wordmark-layer--soft {
+  opacity: 0.58;
+  filter: blur(2px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 15%, #000 32%, transparent 49%);
+  mask-image: linear-gradient(to bottom, transparent 15%, #000 32%, transparent 49%);
+}
+
+.site-footer__wordmark-layer--deep {
+  opacity: 0.42;
+  filter: blur(5px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 29%, #000 43%, transparent 50%);
+  mask-image: linear-gradient(to bottom, transparent 29%, #000 43%, transparent 50%);
 }
 
 @media (max-width: 899px) {
