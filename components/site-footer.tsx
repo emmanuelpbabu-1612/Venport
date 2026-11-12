@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="site-footer__top">
         <div className="site-footer__brand">
           <Link href="/" className="site-footer__brand-link" aria-label="Venport home">
-            <img className="site-footer__logo" src="/images/venport-mark-white.png" data-image-hover="off" alt="" aria-hidden="true" />
+            <img className="site-footer__logo" src="/images/venport-logo-original.png" data-image-hover="off" alt="" aria-hidden="true" />
             <span className="site-footer__wordmark-text">Venport</span>
           </Link>
           <span className="site-footer__brand-divider" aria-hidden="true" />
