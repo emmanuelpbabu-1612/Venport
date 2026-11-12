@@ -1,6 +1,7 @@
 import AnimatedContent from '@/components/AnimatedContent'
 import { IntelligenceSection } from '@/components/intelligence-section'
 import { SharedNavbar } from '@/components/shared-navbar'
+import { SiteFooter } from '@/components/site-footer'
 
 const products = ['Document Intelligence', 'HSN Intelligence', 'Compliance Workflows', 'Trade Monitoring', 'Operational Intelligence', 'Human-in-the-loop Operations']
 
@@ -33,9 +34,9 @@ export default function Page() {
 
       <AnimatedContent as="section" stagger={0.08} className="quote"><blockquote>&quot;International trade should not be held back by the complexity of the systems that support it. We believe intelligence can make those systems more connected, transparent and accessible.&quot;</blockquote><cite>— The Venport founding team</cite></AnimatedContent>
 
-      <AnimatedContent as="section" stagger={0.08} id="careers" className="cta section-rule"><h2>Let&apos;s make international trade more intelligent.</h2><p className="cta-support">Building the next layer of intelligence for customs, compliance and global trade operations.</p><a href="/apply?source=contact" className="cta-link">Talk to Venport <span>↗</span></a></AnimatedContent>
+      <AnimatedContent as="section" stagger={0.08} id="careers" className="cta section-rule"><h2>Let&apos;s make international trade more intelligent.</h2><p className="cta-support">Building the next layer of intelligence for customs, compliance and global trade operations.</p><a href="/apply?source=contact" className="cta-link"><span className="cta-link__label">Talk to Venport</span><span className="cta-link__arrow" aria-hidden="true"><span className="cta-link__arrow-icon cta-link__arrow-icon--out">↗</span><span className="cta-link__arrow-icon cta-link__arrow-icon--in">↗</span></span></a></AnimatedContent>
 
-      <AnimatedContent as="footer" stagger={0.08} id="contact" className="site-footer"><div className="footer-top"><div><a href="#top" className="brand-lockup"><img className="brand-logo" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/venportai_LOGO%281%29-ITKmMO8b0ovmQOt6pCF3tzTv8XRcW8.png" alt="" /><span className="wordmark">Venport</span></a><p className="footer-description">Intelligence for international trade.</p></div><div className="footer-links"><div><span>PLATFORM</span><a href="#capabilities">Overview</a><a href="#capabilities">Document Intelligence</a><a href="#capabilities">HSN Intelligence</a><a href="#capabilities">Compliance Workflows</a></div><div><span>COMPANY</span><a href="#company">About Venport</a><a href="#safety">Our Approach</a><a href="#updates">Journal</a><a href="/apply?source=contact">Contact</a></div><div><span>CONNECT</span><a href="/apply?source=contact">LinkedIn</a><a href="/apply?source=contact">Email</a><a href="/apply?source=contact">Request a Pilot</a></div></div></div><div className="footer-bottom"><span>© 2026 Venport. All rights reserved.</span><span>Privacy Policy · Terms of Use</span><a href="#top">Back to top ↑</a></div><div className="stripes" aria-hidden="true">{Array.from({ length: 18 }).map((_, index) => <i key={index} />)}</div></AnimatedContent>
+      <SiteFooter />
     </main>
   )
 }
