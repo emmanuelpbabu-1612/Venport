@@ -60,9 +60,43 @@ export function ApplicationForm({ source }: Props) {
     setSubmitting(true)
     setError('')
     try {
-      const response = await fetch('/api/applications', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...form, source }) })
-      const result = await response.json()
-      if (!response.ok) throw new Error(result.error || 'Submission failed')
+      const response = await fetch('/api/applications', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...form, source }),
+      })
+      const contentType = response.headers.get('content-type')?.toLowerCase() ?? ''
+      const isJsonResponse = contentType.includes('application/json') || /\+json(?:\s*;|$)/i.test(contentType)
+      const responseText = await response.text()
+      let result: { error?: unknown; referenceId?: unknown } | null = null
+
+      if (isJsonResponse) {
+        try {
+          result = JSON.parse(responseText) as { error?: unknown; referenceId?: unknown }
+        } catch {
+          throw new Error('The application service returned invalid JSON. Please try again.')
+        }
+      }
+
+      if (!response.ok) {
+        if (response.status === 401 || response.status === 403) {
+          throw new Error('This deployment requires authorization before an application can be submitted. Sign in to the authorized preview and try again.')
+        }
+
+        if (typeof result?.error === 'string') throw new Error(result.error)
+        if (!isJsonResponse) {
+          throw new Error(`Application submission failed (HTTP ${response.status}); the server returned ${contentType || 'an unknown content type'} instead of JSON.`)
+        }
+        throw new Error(`Application submission failed (HTTP ${response.status}). Please try again.`)
+      }
+
+      if (!isJsonResponse || typeof result?.referenceId !== 'string') {
+        throw new Error('The application service returned an unexpected response. Please try again.')
+      }
+
       setReferenceId(result.referenceId)
     } catch (submissionError) {
       setError(submissionError instanceof Error ? submissionError.message : 'Something went wrong. Please try again.')
