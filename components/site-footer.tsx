@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="site-footer__top">
         <div className="site-footer__brand">
           <Link href="/" className="site-footer__brand-link" aria-label="Venport home">
-            <img className="site-footer__logo" src="/images/venport-logo-original.png" data-image-hover="off" alt="" aria-hidden="true" />
+            <img className="site-footer__logo" src="/images/venport-mark-white.png" data-image-hover="off" alt="" aria-hidden="true" />
             <span className="site-footer__wordmark-text">Venport</span>
           </Link>
           <span className="site-footer__brand-divider" aria-hidden="true" />
@@ -51,11 +51,7 @@ export function SiteFooter() {
 
       <div className="site-footer__wordmark">
         <span className="sr-only">Venport</span>
-        <span className="site-footer__wordmark-display" aria-hidden="true">
-          <span className="site-footer__wordmark-layer site-footer__wordmark-layer--sharp">Venport</span>
-          <span className="site-footer__wordmark-layer site-footer__wordmark-layer--soft">Venport</span>
-          <span className="site-footer__wordmark-layer site-footer__wordmark-layer--deep">Venport</span>
-        </span>
+        <span className="site-footer__wordmark-display" aria-hidden="true">Venport</span>
       </div>
     </AnimatedContent>
   )
