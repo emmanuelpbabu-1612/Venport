@@ -32,7 +32,18 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
+    const requestContentType = request.headers.get('content-type')?.split(';', 1)[0]?.trim().toLowerCase()
+    if (requestContentType !== 'application/json') {
+      return NextResponse.json({ error: 'Please submit the application as JSON.' }, { status: 415 })
+    }
+
+    let body: unknown
+    try {
+      body = await request.json()
+    } catch {
+      return NextResponse.json({ error: 'Please submit a valid application.' }, { status: 400 })
+    }
+
     const parsed = applicationSchema.safeParse(body)
 
     if (!parsed.success) {
