@@ -1,6 +1,5 @@
 import AnimatedContent from '@/components/AnimatedContent'
 import Link from 'next/link'
-import { FooterBands } from '@/components/footer-bands'
 
 export function SiteFooter() {
   return (
@@ -45,7 +44,9 @@ export function SiteFooter() {
         <Link href="/#top">Back to top ↑</Link>
       </div>
 
-      <FooterBands />
+      <div className="stripes" aria-hidden="true">
+        {Array.from({ length: 18 }).map((_, index) => <i key={index} />)}
+      </div>
     </AnimatedContent>
   )
 }
